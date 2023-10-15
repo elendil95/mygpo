@@ -34,9 +34,10 @@ clean:
 	git clean -fX
 
 install-deps:
+	sudo yum module install postgresql:15/server
 	sudo dnf install libpq-devel libjpeg-devel zlib-devel libwebp-devel \
-		make automake autoconf gcc gcc-c++ python36 python3-virtualenv python36-devel libffi-devel redis postgresql \
-		gettext
+		make automake autoconf gcc gcc-c++ python36 python3-virtualenv python36-devel libffi-devel \
+		gettext redis
 
 format-code:
 	black --target-version py38 --skip-string-normalization mygpo/
