@@ -34,8 +34,8 @@ clean:
 	git clean -fX
 
 install-deps:
-	sudo apt-get install libpq-dev libjpeg-dev zlib1g-dev libwebp-dev \
-		build-essential python3-dev virtualenv libffi-dev redis postgresql \
+	sudo dnf install libpq-devel libjpeg-devel zlib-devel libwebp-devel \
+		make automake autoconf gcc gcc-c++ python36 python3-virtualenv python36-devel libffi-devel redis postgresql \
 		gettext
 
 format-code:
