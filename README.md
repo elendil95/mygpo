@@ -42,3 +42,21 @@ Documentation, especially for the API, is stored in the [**doc** folder](https:/
 Name (Why mygpo?)
 ------------------
 mygpo is a short version of "my.gpodder.org" which was the old [domain] name of gpodder.net and has been used as the project name since then.
+
+Notea
+Postgress setup
+- yum module install postgresql:15/server
+- postgresql-setup --initdb
+- systemctl enable --now postgresql
+- sudo -u postgres psql
+```sql
+CREATE USER mygpo WITH PASSWORD 'mygpo';
+ALTER USER mygpo CREATEDB;  -- required for creating test database
+CREATE DATABASE mygpo;
+CREATE DATABASE test_mygpo;
+GRANT ALL PRIVILEGES ON DATABASE mygpo to mygpo;
+GRANT ALL PRIVILEGES ON DATABASE test_mygpo to mygpo;
+ALTER DATABASE mygpo OWNER TO mygpo;
+ALTER DATABASE test_mygpo OWNER TO mygpo;
+ALTER ROLE mygpo SET statement_timeout = 5000;
+```
