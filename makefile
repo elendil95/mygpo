@@ -36,8 +36,8 @@ clean:
 install-deps:
 	sudo yum module install postgresql:15/server
 	sudo dnf install libpq-devel libjpeg-devel zlib-devel libwebp-devel \
-		make automake autoconf gcc gcc-c++ python36 python3-virtualenv python36-devel libffi-devel \
-		gettext redis
+		make automake autoconf gcc gcc-c++ python3.11 python3-virtualenv python3.11-devel python3.11-pip python3.11-pip-wheel libffi-devel \
+		gettext git redis
 
 format-code:
 	black --target-version py38 --skip-string-normalization mygpo/
