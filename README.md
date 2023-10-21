@@ -38,17 +38,14 @@ Documentation
 -------------
 Documentation, especially for the API, is stored in the [**doc** folder](https://github.com/gpodder/mygpo/tree/master/doc) and can be read on [ReadTheDocs](https://gpoddernet.readthedocs.io/en/latest/index.html).
 
-
-Name (Why mygpo?)
-------------------
-mygpo is a short version of "my.gpodder.org" which was the old [domain] name of gpodder.net and has been used as the project name since then.
-
-Notea
+How to setup the postres database
+----------------
 Postgress setup
 - yum module install postgresql:15/server
 - postgresql-setup --initdb
 - systemctl enable --now postgresql
 - sudo -u postgres psql
+
 ```sql
 CREATE USER mygpo WITH PASSWORD 'mygpo';
 ALTER USER mygpo CREATEDB;  -- required for creating test database
@@ -60,3 +57,8 @@ ALTER DATABASE mygpo OWNER TO mygpo;
 ALTER DATABASE test_mygpo OWNER TO mygpo;
 ALTER ROLE mygpo SET statement_timeout = 5000;
 ```
+
+Name (Why mygpo?)
+------------------
+mygpo is a short version of "my.gpodder.org" which was the old [domain] name of gpodder.net and has been used as the project name since then.
+
