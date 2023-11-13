@@ -11,7 +11,8 @@ mygpo is licensed under the GNU Affero General Public License Version 3. See fil
 
 Installation
 ------------
-See the [installation instructions](https://gpoddernet.readthedocs.io/en/latest/dev/installation.html) for details.
+See the [installation instructions](https://gpoddernet.readthedocs.io/en/latest/dev/installation.html) for details.\
+Following the instructions here will work perfectly on Debian 11 (Python 3.9)
 
 
 Bugs
